@@ -23,3 +23,10 @@ var sym3 = Symbol("foo");
  
 Symbol("foo") === Symbol("foo"); // whatch:	Symbol("foo") === Symbol("foo")	value:false	type:Boolean
 
+/*
+ * Symbol is not a constructor
+ * The following syntax with the new operator will throw a TypeError:
+ */
+if (false) // change on true to check the exception
+	var sym = new Symbol(); // TypeError: Symbol is not a constructor
+

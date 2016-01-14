@@ -115,5 +115,12 @@ Symbol.keyFor(localSym);			// Watch:Symbol.keyFor(localSym)	Value:undefined	Type
  * Watch:Symbol.iterator	Value:Symbol(Symbol.iterator)	Type:Unknown
  */
 
-Symbol.keyFor(Symbol.iterator)		// Watch::Symbol.keyFor(Symbol.iterator)	Value:undefined	Type:Undefined
+Symbol.keyFor(Symbol.iterator)		// Watch:Symbol.keyFor(Symbol.iterator)	Value:undefined	Type:Undefined
+
+/* 
+ * So, let's try following:
+ */
+var SymIter = Symbol.iterator;						// Watch:SymIter	Value:Symbol(Symbol.iterator)	Type:Unknown
+var globalSymIter = Symbol.for("Symbol.iterator");	// Watch:globalSymIter	Value:Symbol(Symbol.iterator)	Type:Unknown
+Symbol.keyFor(globalSymIter);			// Watch:Symbol.keyFor(globalSymIter)	Value:"Symbol.iterator"	:Type:String
 

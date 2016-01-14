@@ -89,3 +89,31 @@ sym.toString();							 // Watch:sym.toString()	Value:"Symbol(mario)"	Type:String
  */
 Symbol.for("es6.foo");
 Symbol.for("es6.bar");
+
+/* ---------------------------------------------*/
+
+/*
+ * The Symbol.keyFor(sym) method retrieves a shared symbol key from the global symbol registry for the given symbol.
+ * 
+ * Syntax
+ *		Symbol.keyFor(sym);
+ * Parameters
+ *		sym
+ *			Symbol, required. The symbol to find a key for.
+ */
+
+var globalSym = Symbol.for("foo");	// create a new global symbol
+Symbol.keyFor(globalSym);			// Watch:Symbol.keyFor(globalSym)	Value:"foo"	Type:String
+
+
+var localSym = Symbol();
+Symbol.keyFor(localSym);			// Watch:Symbol.keyFor(localSym)	Value:undefined	Type:Undefined
+
+
+/*
+ * well-known symbols are not symbols registered in the global symbol registry:
+ * Watch:Symbol.iterator	Value:Symbol(Symbol.iterator)	Type:Unknown
+ */
+
+Symbol.keyFor(Symbol.iterator)		// Watch::Symbol.keyFor(Symbol.iterator)	Value:undefined	Type:Undefined
+

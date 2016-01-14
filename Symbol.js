@@ -83,4 +83,9 @@ Symbol("bar") === Symbol("bar");		 // Watch:Symbol("bar") === Symbol("bar")			Va
 var sym = Symbol.for("mario");			 // Watch:sym				Value:Symbol(mario)		Type:Unknown
 sym.toString();							 // Watch:sym.toString()	Value:"Symbol(mario)"	Type:String
 
-
+/*
+ * To avoid name clashes with yourglobalsymbol keys and other(library code) global symbols, it might be a good idea to
+ * prefix your symbols:
+ */
+Symbol.for("es6.foo");
+Symbol.for("es6.bar");

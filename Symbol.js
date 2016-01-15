@@ -124,3 +124,12 @@ var SymIter = Symbol.iterator;						// Watch:SymIter	Value:Symbol(Symbol.iterato
 var globalSymIter = Symbol.for("Symbol.iterator");	// Watch:globalSymIter	Value:Symbol(Symbol.iterator)	Type:Unknown
 Symbol.keyFor(globalSymIter);			// Watch:Symbol.keyFor(globalSymIter)	Value:"Symbol.iterator"	:Type:String
 
+/* 
+ * Don't be confused
+ */
+
+console.log(SymIter);
+console.log(globalSymIter);
+console.log(Symbol.keyFor(SymIter));
+console.log(Symbol.keyFor(globalSymIter));
+

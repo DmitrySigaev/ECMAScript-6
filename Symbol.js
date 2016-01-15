@@ -166,3 +166,19 @@ console.log(objectSymbols.length); // 2
 console.log(objectSymbols);        // [Symbol(a), Symbol(b)]
 console.log(objectSymbols[0]);     // Symbol(a)
 
+/*
+ * Some brain gym
+ * */
+
+var objectSymbolsArray = [Symbol('a'), Symbol.for('b')];
+var arr = [a, b];
+
+/*
+ * Please, compare
+ */
+
+console.log("objectSymbols[0] === objectSymbolsArray[0] ", objectSymbols[0] === objectSymbolsArray[0]);
+console.log("objectSymbols[1] === objectSymbolsArray[1] ", objectSymbols[1] === objectSymbolsArray[1]);
+
+console.log("objectSymbols[0] === arr[0] ", objectSymbols[0] === arr[0]);
+console.log("objectSymbols[1] === arr[1] ", objectSymbols[1] === arr[1]);

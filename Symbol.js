@@ -182,3 +182,36 @@ console.log("objectSymbols[1] === objectSymbolsArray[1] ", objectSymbols[1] === 
 
 console.log("objectSymbols[0] === arr[0] ", objectSymbols[0] === arr[0]);
 console.log("objectSymbols[1] === arr[1] ", objectSymbols[1] === arr[1]);
+
+/*
+ * Properties
+ *	Symbol.length
+ *		Length property whose value is 0.
+ *	Symbol.prototype
+ *		Represents the prototype for the Symbol constructor.
+ */
+
+/* ---------------------------------------------*/
+
+/*
+ * The Symbol.prototype property represents the prototype for the Symbol constructor.
+ * Property attributes of Symbol.prototype
+ * Writable					no
+ * Enumerable				no
+ * Configurable				no
+ * 
+ * Description
+ *		Symbol instances inherit from Symbol.prototype. You can use the constructor's prototype object to add properties or
+ *		methods to all Symbol instances.
+ *		
+ * Properties
+ * Symbol.prototype.constructor
+ *		Returns the function that created an instance's prototype. This is the Symbol function by default.
+ */
+/*
+function Symbol(){
+	return { log: console.log(arguments),
+		constructor: Symbol.prototype.constructor,
+	}
+} 
+*/

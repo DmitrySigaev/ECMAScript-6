@@ -238,4 +238,11 @@ function Symbol(){
 if (false)
 	Symbol("foo") + "bar";       // TypeError: Cannot convert a Symbol value to a string
 
+Symbol("desc").toString();   //  Watch:Symbol("desc").toString()	Value:"Symbol(desc)"	Type:String
+
+// well-known symbols
+Symbol.iterator.toString();  //  Watch:Symbol.iterator.toString()	Value:"Symbol(Symbol.iterator)"	Type:String
+
+// global symbols
+Symbol.for("foo").toString(); // Watch:Symbol.for("foo").toString()	Value:"Symbol(foo)"	Type:String
 

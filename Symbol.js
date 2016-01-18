@@ -215,3 +215,27 @@ function Symbol(){
 	}
 } 
 */
+
+/* ---------------------------------------------*/
+
+/*
+ * Symbol.prototype.toString()
+ */
+
+/*
+ * The toString() method returns a string representing the specified Symbol object.
+ * Syntax
+ *		Symbol().toString();
+ * Description
+ *		The Symbol object overrides the toString method of the Object object; it does not inherit
+ *		Object.prototype.toString(). For Symbol objects, the toString method returns a string
+ *		 representation of the object.
+ *		 
+ * No string concatenation
+ *	While you can call toString() on Symbols, you can't use string concatenation with them:
+ */
+
+if (false)
+	Symbol("foo") + "bar";       // TypeError: Cannot convert a Symbol value to a string
+
+

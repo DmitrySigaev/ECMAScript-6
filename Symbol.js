@@ -263,5 +263,35 @@ Symbol.for("foo").toString(); // Watch:Symbol.for("foo").toString()	Value:"Symbo
  *		 
  * Some built-in types have a default iteration behavior, while other types (such as Object) do not. 
  * The built-in types with a @@iterator method are:
- *  */
+ * 
+ * Array.prototype[@@iterator]()
+ * TypedArray.prototype[@@iterator]()
+ * String.prototype[@@iterator]()
+ * Map.prototype[@@iterator]()
+ * Set.prototype[@@iterator]()
+ * See also Iteration protocols for more information.
+ * 
+ */
 
+/*
+ * User - defined iterables
+ * We can make our own iterables like this:
+ */
+
+var myIterable = {}
+myIterable[Symbol.iterator] = function* () {
+	yield 1;
+	yield 2;
+	yield 3;
+};
+var test_iter = [...myIterable]; // [1, 2, 3]
+console.log(test_iter);
+
+/*
+-Watch:test_iter Value:{ Array } Type:Object
+		[0] 1 Number
+		[1] 2 Number
+		[2] 3 Number 
++ __proto__ { Array } Object
+length 3 Number
+*/

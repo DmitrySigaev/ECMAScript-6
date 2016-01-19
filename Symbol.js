@@ -246,3 +246,22 @@ Symbol.iterator.toString();  //  Watch:Symbol.iterator.toString()	Value:"Symbol(
 // global symbols
 Symbol.for("foo").toString(); // Watch:Symbol.for("foo").toString()	Value:"Symbol(foo)"	Type:String
 
+/* ---------------------------------------------*/
+
+/*
+ * The Symbol.iterator well - known symbol specifies the default iterator for an object.Used by for...of.
+ * 
+ * Property attributes of Symbol.iterator
+ * Writable			no
+ * Enumerable		no
+ * Configurable		no
+ * 
+ * Description
+ *		Whenever an object needs to be iterated (such as at the beginning of a for..of loop), 
+ *		its @@iterator method is called with no arguments, and the returned iterator is used to
+ *		 obtain the values to be iterated.
+ *		 
+ * Some built-in types have a default iteration behavior, while other types (such as Object) do not. 
+ * The built-in types with a @@iterator method are:
+ *  */
+

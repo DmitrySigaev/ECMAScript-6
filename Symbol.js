@@ -318,4 +318,22 @@ if (false)
 	var test_iter2 = [...nonWellFormedIterable]; // TypeError: [] is not a function
 }
 
+/*
+ * Difference between for...of and for...in
+ * 
+ *		The following example shows the difference between a for...of loop and a for...in loop.
+ *		While for...in iterates over property names, for...of iterates over property values:
+ */
+
+var arr = [3, 5, 7];
+arr.foo = "hello";
+console.log("in :");
+for (var i in arr) {
+	console.log(i); // logs "0", "1", "2", "foo"
+}
+
+console.log("of :");
+for (var i of arr) {
+   console.log(i); // logs "3", "5", "7"
+}
 

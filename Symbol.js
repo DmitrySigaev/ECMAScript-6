@@ -369,8 +369,8 @@ console.log(eArr.next().value); // k
 /*
 -Watch:	eArr.next()	Value:	{...}	Type:	Object 
 +		__proto__			{...}			Object
-			done			false			Boolean
-			value			"o"				String
+		done				false			Boolean
+		value				"o"				String
 */
 console.log(eArr.next().value); // o
 console.log(eArr.next().value); // p

@@ -292,6 +292,30 @@ console.log(test_iter);
 		[0] 1 Number
 		[1] 2 Number
 		[2] 3 Number 
-+ __proto__ { Array } Object
-length 3 Number
+	+ __proto__ { Array } Object
+		length 3 Number
 */
+
+/*
+ * Non-well-formed iterables
+ * 
+ * If an iterable's @@iterator method doesn't return an iterator object, then it's a non-well-formed iterable,
+ *  using it as such is likely to result in runtime exceptions or buggy behavior:
+ */
+
+var nonWellFormedIterable = {};
+nonWellFormedIterable[Symbol.iterator] = () => 1;
+
+/*
+-Watch:nonWellFormedIterable[Symbol.iterator]	Value:() => 1	Type:Function
+	+__proto__ function () { } Function
+	length 0 Number
+	name "" String
+*/
+
+if (false)
+{
+	var test_iter2 = [...nonWellFormedIterable]; // TypeError: [] is not a function
+}
+
+

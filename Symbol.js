@@ -336,4 +336,47 @@ console.log("of :");
 for (var i of arr) {
    console.log(i); // logs "3", "5", "7"
 }
+/*
+ * Array.prototype[@@iterator]()
+ * 
+ * The initial value of the @@iterator property is the same function object as the initial value of the values() property.
+ * Syntax
+ *		arr[Symbol.iterator]()
+ */
 
+/* Iteration using for...of loop */
+
+var arr = ['w', 'y', 'k', 'o', 'p'];
+// your browser must support for..of loop
+// and let-scoped variables in for loops but in my node.js it doesn't.
+for (var letter of arr) {
+  console.log(letter);
+}
+
+/* Alternative iteration */
+
+var arr = ['w', 'y', 'k', 'o', 'p'];
+var eArr = arr[Symbol.iterator]();
+
+/*
+- Watch:	eArr	Value:	{ Array Iterator }	Type:	Object
+		__proto__			{...}						Object
+*/
+
+console.log(eArr.next().value); // w
+console.log(eArr.next().value); // y
+console.log(eArr.next().value); // k
+/*
+-Watch:	eArr.next()	Value:	{...}	Type:	Object 
++		__proto__			{...}			Object
+			done			false			Boolean
+			value			"o"				String
+*/
+console.log(eArr.next().value); // o
+console.log(eArr.next().value); // p
+/*
+-Watch:	eArr.next()	Value:	{...}	Type:	Object 
++		__proto__			{...}			Object
+		done				true			Boolean
+		value				undefined		Undefined
+*/
